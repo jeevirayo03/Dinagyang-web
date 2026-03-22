@@ -62,6 +62,7 @@ body {
     text-decoration: none;
     position: relative;
     transition: 0.3s;
+	padding: 5px;
 }
 
 /* Underline */
@@ -102,7 +103,7 @@ nav a:hover::after {
 .hero {
     height: 90vh;
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-               url('Iloilo_Dinagyang_Festival.jpg');
+               url('Dinagyang.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
