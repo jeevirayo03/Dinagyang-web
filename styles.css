@@ -25,7 +25,7 @@ body {
     color: #333;
 }
 
-/* Header */
+/* Header Layout */
 .header {
     background: linear-gradient(90deg, #0f172a, #1e293b);
     color: white;
@@ -35,12 +35,15 @@ body {
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
+
+/* Logo */
 .logo {
     font-family: 'Poppins', sans-serif;
     font-size: 26px;
     font-weight: 700;
-    color: #38bdf8; /* matches your buttons */
+    color: #38bdf8;
 }
+
 .container {
     width: 90%;
     max-width: 1100px;
@@ -49,17 +52,20 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+/* Nav Desktop */
+.nav {
+    display: flex;
+}
 
-nav a {
-    color: #38bdf8; /* same as your logo */
-    margin-left: 20px;
+.nav a {
+    color: #38bdf8;
     text-decoration: none;
     position: relative;
     transition: 0.3s;
 }
 
-/* Underline animation */
-nav a::after {
+/* Underline */
+.nav a::after {
     content: '';
     width: 0;
     height: 2px;
@@ -70,13 +76,27 @@ nav a::after {
     transition: 0.3s;
 }
 
+
 nav a:hover::after {
     width: 100%;
 }
 
-nav a:hover {
+.nav a:hover {
     color: white;
 }
+/* Hide checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* Hamburger icon */
+.menu-icon {
+    display: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+
 
 /* Hero */
 .hero {
@@ -240,21 +260,88 @@ footer {
 }
 
 @media (max-width: 768px) {
+
+   .container {
+	    flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu-icon {
+        display: block;
+        margin-top: 10px;
+    }
+
+    .logo {
+        font-size: 22px;
+        text-align: center;
+    }
+
+     .nav {
+        position: absolute;
+        top: 70px; /* below header */
+        left: 0;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        background: #0f172a;
+    }
+
+    .nav a {
+        padding: 12px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        text-align: center;
+    }
+	
+	#menu-toggle:checked + .menu-icon + .nav {
+        display: flex;
+    }
+
+    /* Hero */
+    .hero {
+        height: 80vh;
+        padding: 20px;
+    }
+
     .hero h2 {
         font-size: 2rem;
     }
 
-    nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 10px;
+    .hero p {
+        font-size: 14px;
     }
 
-    nav a {
-        margin: 10px 0;
+    /* Sections */
+    .section {
+        padding: 50px 15px;
+    }
+
+    /* Cards (Events) */
+    .grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    /* History */
+    .history-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .history-title h2 {
+        margin-bottom: 15px;
+    }
+
+    /* Form */
+    .form {
+        width: 90%;
     }
 }
+
 @keyframes zoomBg {
     from {
         background-size: 100%;
