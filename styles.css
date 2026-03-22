@@ -1,0 +1,265 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+/* Prevent header from covering sections */
+body {
+    scroll-padding-top: 80px;
+}
+
+section {
+    scroll-margin-top: 80px;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f9fafb;
+    color: #333;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(90deg, #0f172a, #1e293b);
+    color: white;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+.logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #38bdf8; /* matches your buttons */
+}
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: #38bdf8; /* same as your logo */
+    margin-left: 20px;
+    text-decoration: none;
+    position: relative;
+    transition: 0.3s;
+}
+
+/* Underline animation */
+nav a::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: #38bdf8;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a:hover {
+    color: white;
+}
+
+/* Hero */
+.hero {
+    height: 90vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+               url('Iloilo_Dinagyang_Festival.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+
+    animation: fadeIn 1.5s ease-in, zoomBg 10s ease-in-out infinite alternate;
+}
+
+.hero h2 {
+    font-size: 3rem;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    background: #38bdf8;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #0ea5e9;
+    transform: scale(1.05);
+}
+
+/* Sections */
+.section {
+    padding: 70px 20px;
+    min-height: 70vh; /* less space but still scrolls nicely */
+    text-align: center;
+    animation: fadeUp 1s ease;
+}
+.section p {
+    max-width: 800px;
+    margin: 15px auto;
+    line-height: 1.8;
+    font-size: 16px;
+}
+/* History Layout Fix */
+.history-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    max-width: 1100px;
+    margin: auto;
+    text-align: left;
+}
+
+.history-title {
+    flex: 1;
+}
+
+.history-title h2 {
+    font-size: 28px;
+}
+
+.history-content {
+    flex: 2;
+}
+
+.history-content p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+.alt {
+    background: #e2e8f0;
+}
+
+/* Cards */
+.grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    width: 280px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+.card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+}
+
+/* Form */
+.form {
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.form input,
+.form textarea {
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.form button {
+    background: #0f172a;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.form button:hover {
+    background: #1e293b;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background: #0f172a;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    nav a {
+        margin: 10px 0;
+    }
+}
+@keyframes zoomBg {
+    from {
+        background-size: 100%;
+    }
+    to {
+        background-size: 110%;
+    }
+}
